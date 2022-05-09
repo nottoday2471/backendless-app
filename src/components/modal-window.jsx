@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import '../styles/modal-styles.css'
 import Backendless from "backendless"
-import axios from "axios"
 
 function ModalWindow(props) {
 
