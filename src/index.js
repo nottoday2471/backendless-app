@@ -4,6 +4,6 @@ import App from './App';
 
 import Backendless from 'backendless';
 
-Backendless.initApp('https://naturaltray.backendless.app')
+Backendless.initApp(process.env.REACT_APP_CUSTOM_DOMAIN)
 
 ReactDOM.render(<App />, document.getElementById('root'));
