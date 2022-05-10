@@ -16,7 +16,7 @@ function ModalWindow(props) {
                 setUserStatus(true)
                 try {
                     console.log(props.file.fileURL)
-                    const res = await Backendless.Files.copyFile(props.file.fileURL,`https://eu.backendlessappcontent.com/34B1584C-F24F-4764-FF20-7119C78FAD00/087FFB8B-902E-4389-85EF-83CB89874E7D/files/${user}/shared_with_me`)
+                    const res = await Backendless.Files.copyFile(props.file.fileURL,`https://eu.backendlessappcontent.com/${process.env.REACT_APP_ID}/${process.env.REACT_APP_API_KEY}/files/${user}/shared_with_me`)
                     console.log(res)
                 } catch(err) {
                     console.log(err)

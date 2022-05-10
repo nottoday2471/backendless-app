@@ -8,7 +8,7 @@ import ModalWindow from "./modal-window";
 
 function Account() {
 
-    const iconForNonImageFile = 'https://eu.backendlessappcontent.com/34B1584C-F24F-4764-FF20-7119C78FAD00/087FFB8B-902E-4389-85EF-83CB89874E7D/files/special_folder/file_icon.png'
+    const iconForNonImageFile = `https://eu.backendlessappcontent.com/${process.env.REACT_APP_ID}/${process.env.REACT_APP_API_KEY}/files/special_folder/file_icon.png`
     const regExForFileName = /.(jpg|png|gif)$/i
 
     const [user, setUser] = useState({})
@@ -82,7 +82,7 @@ function Account() {
     const downloadFile = async (fileName) => {
         try {
             const res = await axios.get(
-                `https://eu.backendlessappcontent.com/34B1584C-F24F-4764-FF20-7119C78FAD00/087FFB8B-902E-4389-85EF-83CB89874E7D/files/${user.name}/${fileName}`,
+                `https://eu.backendlessappcontent.com/${process.env.REACT_APP_ID}/${process.env.REACT_APP_API_KEY}/files/${user.name}/${fileName}`,
                 { responceType: 'blob' })
             await fileDownload(res.data, fileName)
             console.log(res)
