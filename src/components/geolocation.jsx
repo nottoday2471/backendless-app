@@ -68,6 +68,8 @@ function Geolocation() {
             setLongitude('')
             setLatitude('')
         } catch(err) {
+            Backendless.Logging.setLogReportingPolicy( 1, 1 );
+            Backendless.Logging.getLogger('add-geo-place').error(err.message)
             console.log(err)
         }
     }
